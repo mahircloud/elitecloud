@@ -88,21 +88,67 @@
 
 <section>
     <h2>Enquiry Form</h2>
-    <form id="enquiryForm">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required />
+    <style>
+        #enquiryFormContainer {
+          max-width: 400px;
+          margin: 30px auto;
+          padding: 20px;
+          border: 2px solid #ccc;
+          border-radius: 10px;
+          background-color: #f9f9f9;
+          font-family: Arial, sans-serif;
+        }
 
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required />
+        #enquiryForm label {
+          display: block;
+          margin-top: 10px;
+          font-weight: bold;
+        }
 
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required />
+        #enquiryForm input,
+        #enquiryForm textarea {
+          width: 80%;
+          padding: 6px;
+          margin-top: 5px;
+          border: 1px solid #aaa;
+          border-radius: 5px;
+          font-size: 14px;
+        }
 
-        <label for="reason">Reason for Enquiry:</label>
-        <textarea id="reason" name="reason" rows="4" required></textarea>
+        #enquiryForm button {
+          margin-top: 15px;
+          padding: 8px 16px;
+          font-size: 14px;
+          background-color: #0077cc;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
 
-        <button type="submit">Submit Enquiry</button>
-    </form>
+        #enquiryForm button:hover {
+          background-color: #005fa3;
+        }
+    </style>
+
+    <div id="enquiryFormContainer">
+        <form id="enquiryForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="reason">Reason for Enquiry:</label>
+            <textarea id="reason" name="reason" rows="3" required></textarea>
+
+            <button type="submit">Submit Enquiry</button>
+        </form>
+    </div>
+
 </section>
 <script>
     document.getElementById('enquiryForm').addEventListener('submit', function(e) {
@@ -133,7 +179,7 @@
 
     <div style="max-width: 800px; margin: auto; text-align: center;">
         <video width="100%" controls>
-            <source src="your-testimonial-video.mp4" type="video/mp4">
+            <source src="https://www.youtube.com/watch?v=PpH_mi923_A&pp=ygUYMiBtaW4gbW90aXZhdGlvbmFsIHZpZGVv" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
