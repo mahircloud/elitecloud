@@ -88,7 +88,7 @@
 
 <section>
     <h2>Enquiry Form</h2>
-    <form action="submit-form.php" method="POST">
+    <form id="enquiryForm">
         <label for="name">Full Name:</label>
         <input type="text" id="name" name="name" required>
 
@@ -104,7 +104,29 @@
         <button type="submit">Submit Enquiry</button>
     </form>
 </section>
+<script>
+    const form = document.getElementById('enquiryForm');
 
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch('YOUR_SCRIPT_URL_HERE', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(result => {
+        alert("Enquiry submitted successfully!");
+        form.reset();
+      })
+      .catch(error => {
+        alert("Something went wrong. Please try again.");
+        console.error('Error!', error.message);
+      });
+    });
+</script>
 <footer>
     <p>&copy; 2025 MannmeetAhir. All rights reserved.</p>
 </footer>
