@@ -108,7 +108,8 @@
     document.getElementById('enquiryForm').addEventListener('submit', function(e) {
       e.preventDefault();
 
-      const formData = new FormData(this);
+      const form = this;
+      const formData = new FormData(form);
 
       fetch('https://script.google.com/macros/s/AKfycbz_wHcjxfOYDWMjIFG6wTzx9FJDuPPA7OnzdyaL3bER7XcVTJZa1rIXoLmVaLoblI4V/exec', {
         method: 'POST',
@@ -117,17 +118,17 @@
       .then(response => response.text())
       .then(result => {
         alert("Form submitted successfully ✅");
-        console.log("Server response:", result);
 
-        // ✅ Clear form after success
-        document.getElementById('enquiryForm').reset();
+        // 🔄 Clear the form
+        form.reset();
       })
       .catch(error => {
-        console.error("Error:", error);
-        alert("Failed to submit ❌: " + error.message);
+        console.error("Submission failed:", error);
+        alert("There was an error ❌: " + error.message);
       });
     });
 </script>
+
 
 <footer>
     <p>&copy; 2025 MannmeetAhir. All rights reserved.</p>
