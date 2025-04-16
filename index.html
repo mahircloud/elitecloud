@@ -116,15 +116,19 @@
       })
       .then(response => response.text())
       .then(result => {
-        alert("Form submitted successfully!");
-        console.log(result);
+        alert("Form submitted successfully ✅");
+        console.log("Server response:", result);
+
+        // ✅ Clear form after success
+        document.getElementById('enquiryForm').reset();
       })
       .catch(error => {
-        alert("There was an error!");
-        console.error(error);
+        console.error("Error:", error);
+        alert("Failed to submit ❌: " + error.message);
       });
     });
 </script>
+
 
 <footer>
     <p>&copy; 2025 MannmeetAhir. All rights reserved.</p>
